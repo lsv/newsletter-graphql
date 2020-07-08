@@ -1,0 +1,29 @@
+##
+# ScandiPWA_NewsletterGraphQl
+#
+# @category    ScandiPWA
+# @package     ScandiPWA_NewsletterGraphQl
+# @author      Scandesignmedia <info@scandesignmedia.dk>
+# @copyright   Copyright (c) 2018 Scandiweb, Ltd (https://scandiweb.com)
+##
+
+type Mutation {
+    signupNewsletter(email: String!): CreateNewsletter @resolver(class:"\\ScandiPWA\\NewsletterGraphQl\\Model\\Resolver\\signupNewsletter")
+    newsletterConfirm(id: Int!, code: String!): ConfirmStatus @resolver(class:"\\ScandiPWA\\NewsletterGraphQl\\Model\\Resolver\\confirmNewsletter")
+}
+
+type CreateNewsletter {
+    status: String @doc(description: "Customer email verification status")
+}
+
+type ConfirmStatus {
+    status: String @doc(description: "Newsletter confirm status")
+}
+
+type Query {
+    subscriberStatus(customerId: Int!): SubscriberStatus @resolver(class:"\\ScandiPWA\\NewsletterGraphQl\\Model\\Resolver\\subscriberStatus")
+}
+
+type SubscriberStatus {
+    status: Int @doc(description: "Customer subscription status 1=subscribed, 2=need to confirm, 3=unsubscribed")
+}

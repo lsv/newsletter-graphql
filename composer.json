@@ -1,0 +1,29 @@
+{
+  "name": "scandipwa/newsletter-graphql",
+  "description": "ScandiPWA GraphQl support for Newsletter",
+  "keywords": [
+    "magento2",
+    "module",
+    "scandipwa",
+    "pwa"
+  ],
+  "support": {
+    "email": "info@scandiweb.com"
+  },
+  "require": {
+    "magento/magento2-base": "^2.3.5",
+    "scandipwa/performance": "^1.0.3"
+  },
+  "type": "magento2-module",
+  "license": [
+    "OSL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "src/registration.php"
+    ],
+    "psr-4": {
+      "ScandiPWA\\NewsletterGraphQl\\": "src/"
+    }
+  }
+}
