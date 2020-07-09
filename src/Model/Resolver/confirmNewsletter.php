@@ -15,8 +15,9 @@ use Magento\Framework\GraphQl\Config\Element\Field;
 use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
 use Magento\Newsletter\Controller\Subscriber\Confirm;
 use Magento\Newsletter\Model\Subscriber;
+use Magento\Framework\GraphQl\Query\ResolverInterface;
 
-class confirmNewsletter extends Confirm
+class confirmNewsletter extends Confirm implements ResolverInterface
 {
 
     public function resolve(
